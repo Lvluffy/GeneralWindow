@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?><!--公共对话框布局-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dialog_transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_dialog_base"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_false_cancel_selector"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <!--标题内容-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20">
+
+            <!--顶部图片-->
+            <ImageView
+                android:id="@+id/topIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/y20"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                tools:src="@drawable/icon_dialog_loading" />
+
+            <!--标题-->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/y5"
+                android:maxLines="1"
+                android:scrollbars="none"
+                android:textColor="@color/dialog_color_333333"
+                android:textSize="@dimen/text_size_16"
+                android:visibility="gone"
+                tools:text="@string/dialog_title" />
+
+            <!--内容-->
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/y5"
+                android:scrollbars="vertical"
+                android:textSize="@dimen/text_size_16"
+                android:visibility="gone"
+                tools:text="@string/dialog_content" />
+
+            <!--图片-->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/y20"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                tools:src="@drawable/icon_dialog_loading" />
+
+            <!--列表-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+            <!--编辑框-->
+            <RelativeLayout
+                android:id="@+id/edit_box_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@color/dialog_white"
+                android:visibility="gone">
+
+                <!--编辑框-->
+                <EditText
+                    android:id="@+id/edit_box_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y45"
+                    android:background="@drawable/dialog_edit_bg_radius_true_selector"
+                    android:padding="@dimen/x10"
+                    android:textColor="@color/dialog_color_333333"
+                    android:textColorHint="@color/dialog_color_BBBBBB"
+                    android:textSize="@dimen/text_size_14"
+                    android:visibility="gone"
+                    tools:text="@string/dialog_content" />
+
+                <!--编辑数量-->
+                <TextView
+                    android:id="@+id/text_box_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/edit_box_content"
+                    android:paddingBottom="@dimen/x10"
+                    android:paddingRight="@dimen/x10"
+                    android:textColor="@color/dialog_color_BBBBBB"
+                    android:visibility="gone"
+                    tools:text="500" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--间隙-->
+        <View
+            android:id="@+id/gaps"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y20"
+            android:background="@color/dialog_transparent"
+            android:visibility="gone" />
+
+        <!--分割线-->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@color/dialog_color_E0E0E0"
+            android:visibility="gone" />
+
+        <!--普通按钮-->
+        <LinearLayout
+            android:id="@+id/layout_common_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/y15"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y15"
+            android:visibility="gone">
+
+            <!--普通取消-->
+            <TextView
+                android:id="@+id/common_cancel"
+                style="@style/dialog_btn_style"
+                android:layout_weight="1"
+                android:visibility="gone"
+                tools:text="@string/dialog_cancel" />
+
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/x10"
+                android:layout_height="@dimen/x10" />
+
+            <!--普通确定-->
+            <TextView
+                android:id="@+id/common_sure"
+                style="@style/dialog_btn_style"
+                android:layout_weight="1"
+                android:visibility="gone"
+                tools:text="@string/dialog_confirm" />
+
+        </LinearLayout>
+
+        <!--简单按钮-->
+        <LinearLayout
+            android:id="@+id/layout_simple_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/y15"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y15"
+            android:visibility="gone">
+
+            <!--简单取消-->
+            <TextView
+                android:id="@+id/simple_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/x5"
+                android:textColor="@color/dialog_black"
+                android:textSize="@dimen/text_size_14"
+                android:visibility="gone"
+                tools:text="@string/dialog_cancel" />
+
+            <!--简单确定-->
+            <TextView
+                android:id="@+id/simple_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/x5"
+                android:textColor="@color/dialog_color_5096F5"
+                android:textSize="@dimen/text_size_14"
+                android:visibility="gone"
+                tools:text="@string/dialog_confirm" />
+
+        </LinearLayout>
+
+        <!--扩展按钮-->
+        <RelativeLayout
+            android:id="@+id/layout_extend_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/y15"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y15"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/extend"
+                style="@style/dialog_btn_style"
+                android:visibility="gone"
+                tools:text="@string/dialog_confirm" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
