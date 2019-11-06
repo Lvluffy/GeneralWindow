@@ -688,6 +688,22 @@ public class DialogBuilder extends BaseDialogBuilder {
     /*----------普通确定按钮（begin）----------*/
 
     /**
+     * 设置普通按钮--外边距
+     *
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     * @return
+     */
+    public DialogBuilder setCommonButtonMargin(int left, int top, int right, int bottom) {
+        LinearLayout layout = mView.findViewById(R.id.layout_common_btn);
+        LinearLayout.LayoutParams mLayoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();
+        mLayoutParams.setMargins(left, top, right, bottom);
+        return this;
+    }
+
+    /**
      * 设置普通确定按钮--通过ID
      *
      * @param textId
@@ -864,6 +880,22 @@ public class DialogBuilder extends BaseDialogBuilder {
 
     /*----------普通取消按钮（end）----------*/
     /*----------简单确定按钮（begin）----------*/
+
+    /**
+     * 设置简单按钮--外边距
+     *
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     * @return
+     */
+    public DialogBuilder setSimpleButtonMargin(int left, int top, int right, int bottom) {
+        LinearLayout layout = mView.findViewById(R.id.layout_simple_btn);
+        LinearLayout.LayoutParams mLayoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();
+        mLayoutParams.setMargins(left, top, right, bottom);
+        return this;
+    }
 
     /**
      * 设置简单确定按钮--通过ID

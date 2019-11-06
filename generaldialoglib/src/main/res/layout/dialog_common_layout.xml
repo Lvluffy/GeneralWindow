@@ -155,7 +155,7 @@
             <!--普通取消-->
             <TextView
                 android:id="@+id/common_cancel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/dialog_drawable_normal_radius_false_stroke_false_confirm_selector"
@@ -175,7 +175,7 @@
             <!--普通确定-->
             <TextView
                 android:id="@+id/common_sure"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/dialog_drawable_normal_radius_false_stroke_false_confirm_selector"
@@ -199,7 +199,7 @@
             <!--简单取消-->
             <TextView
                 android:id="@+id/simple_cancel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/dialog_drawable_normal_btn_left_selector"
@@ -214,7 +214,7 @@
             <!--简单确定-->
             <TextView
                 android:id="@+id/simple_confirm"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/dialog_drawable_normal_btn_right_selector"
