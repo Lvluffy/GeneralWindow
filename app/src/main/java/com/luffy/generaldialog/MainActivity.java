@@ -73,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
                         .setContentGravity(Gravity.CENTER)
                         .setContentLineSpacing(getResources().getDimension(R.dimen.y5))
                         .setDivider(true)
-                        .setSimpleCancelButtonBG(R.color.dialog_white, R.color.dialog_color_666666)
+                        .setSimpleCancelButtonBG(R.drawable.dialog_drawable_normal_btn_left_selector, R.color.dialog_color_666666)
                         .setSimpleCancelButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                             }
                         })
-                        .setSimpleConfirmButtonBG(R.color.dialog_white, R.color.colorPrimary)
+                        .setSimpleConfirmButtonBG(R.drawable.dialog_drawable_normal_btn_right_selector, R.color.colorPrimary)
                         .setSimpleConfirmButton("确认", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

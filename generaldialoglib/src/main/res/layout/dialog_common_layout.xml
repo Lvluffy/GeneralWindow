@@ -146,17 +146,24 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/y15"
+            android:paddingBottom="@dimen/y10"
             android:paddingLeft="@dimen/x20"
             android:paddingRight="@dimen/x20"
-            android:paddingTop="@dimen/y15"
+            android:paddingTop="@dimen/y10"
             android:visibility="gone">
 
             <!--普通取消-->
             <TextView
                 android:id="@+id/common_cancel"
-                style="@style/dialog_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/dialog_drawable_normal_radius_false_stroke_false_confirm_selector"
+                android:gravity="center"
+                android:paddingBottom="@dimen/y10"
+                android:paddingTop="@dimen/y10"
+                android:textColor="@color/dialog_color_333333"
+                android:textSize="@dimen/text_size_14"
                 android:visibility="gone"
                 tools:text="@string/dialog_cancel" />
 
@@ -168,8 +175,15 @@
             <!--普通确定-->
             <TextView
                 android:id="@+id/common_sure"
-                style="@style/dialog_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/dialog_drawable_normal_radius_false_stroke_false_confirm_selector"
+                android:gravity="center"
+                android:paddingBottom="@dimen/y10"
+                android:paddingTop="@dimen/y10"
+                android:textColor="@color/dialog_color_333333"
+                android:textSize="@dimen/text_size_14"
                 android:visibility="gone"
                 tools:text="@string/dialog_confirm" />
 
@@ -180,10 +194,6 @@
             android:id="@+id/layout_simple_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/y15"
-            android:paddingLeft="@dimen/x20"
-            android:paddingRight="@dimen/x20"
-            android:paddingTop="@dimen/y15"
             android:visibility="gone">
 
             <!--简单取消-->
@@ -192,8 +202,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/dialog_drawable_normal_btn_left_selector"
                 android:gravity="center"
-                android:padding="@dimen/x5"
+                android:paddingBottom="@dimen/y15"
+                android:paddingTop="@dimen/y15"
                 android:textColor="@color/dialog_black"
                 android:textSize="@dimen/text_size_14"
                 android:visibility="gone"
@@ -205,8 +217,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/dialog_drawable_normal_btn_right_selector"
                 android:gravity="center"
-                android:padding="@dimen/x5"
+                android:paddingBottom="@dimen/y15"
+                android:paddingTop="@dimen/y15"
                 android:textColor="@color/dialog_color_5096F5"
                 android:textSize="@dimen/text_size_14"
                 android:visibility="gone"
