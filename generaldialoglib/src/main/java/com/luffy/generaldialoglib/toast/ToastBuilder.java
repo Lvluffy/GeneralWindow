@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.NotificationManagerCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.luffy.generaldialoglib.R;
+import com.luffy.generaldialoglib.utils.OSUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
@@ -219,7 +221,18 @@ public class ToastBuilder {
             mToast.setGravity(gravity, 0, 0);
         }
         mToast.setView(mView);
-        showSystemToast(mToast);
+        // 判断通知是否打开
+        if (NotificationManagerCompat.from(mContext).areNotificationsEnabled()) {
+            mToast.show();
+        } else {
+            if (OSUtils.getInstance().getOSType().equals(OSUtils.OSType.Huawei) ||
+                    OSUtils.getInstance().getOSType().equals(OSUtils.OSType.Sanxing) ||
+                    OSUtils.getInstance().getOSType().equals(OSUtils.OSType.Meizu)) {
+                showSystemToast(mToast);
+            } else {
+                mToast.show();
+            }
+        }
         return this;
     }
 
