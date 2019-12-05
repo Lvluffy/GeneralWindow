@@ -2,14 +2,13 @@ package com.luffy.generaldialoglib.popupWindow.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
@@ -50,14 +49,28 @@ public abstract class BasePopupWindow extends PopupWindow implements View.OnClic
         this.mView = LayoutInflater.from(mContext).inflate(addLayout(), null);
         /*添加视图*/
         this.setContentView(mView);
-        setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         /*设置窗体的宽和高*/
         this.setWidth(RelativeLayout.LayoutParams.MATCH_PARENT);
         this.setHeight(RelativeLayout.LayoutParams.MATCH_PARENT);
         /*必须设置BackgroundDrawable后setOutsideTouchable(true)才会有效*/
-        this.setBackgroundDrawable(new BitmapDrawable(context.getResources(), (Bitmap) null));
+        this.setBackgroundDrawable(new BitmapDrawable());
         /*设置允许在外点击消失*/
         this.setOutsideTouchable(false);
+        /*监听系统返回键*/
+        this.setFocusable(true);
+        this.mView.setFocusable(true);
+        this.mView.setFocusableInTouchMode(true);
+        this.mView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+                    dismiss();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
         /*初始化控件*/
         initView();
         /*处理事件*/

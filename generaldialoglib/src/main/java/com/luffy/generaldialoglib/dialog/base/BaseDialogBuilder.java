@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,7 +20,7 @@ import com.luffy.generaldialoglib.R;
  */
 public abstract class BaseDialogBuilder implements IBaseDialog {
 
-    public DBAlertDialog mDialog;
+    public BaseAlertDialog mDialog;
     public Context mContext;
     public View mView;
 
@@ -37,7 +38,18 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
 
     public BaseDialogBuilder(Context mContext) {
         this.mContext = mContext;
-        mDialog = new BaseDialogBuilder.DBAlertDialog(mContext);
+        mDialog = new BaseAlertDialog(mContext);
+        mDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+                    mDialog.dismiss();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
         mView = LayoutInflater.from(mContext).inflate(bindView(), null);
         init();
     }
@@ -57,7 +69,7 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
     /**
      * 内部类
      */
-    public class DBAlertDialog extends AlertDialog {
+    public class BaseAlertDialog extends AlertDialog {
 
         private boolean isFullScreen = false;
 
@@ -69,11 +81,11 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
             isFullScreen = fullScreen;
         }
 
-        protected DBAlertDialog(Context context) {
+        protected BaseAlertDialog(Context context) {
             super(context);
         }
 
-        protected DBAlertDialog(Context context, int style) {
+        protected BaseAlertDialog(Context context, int style) {
             super(context, style);
         }
 
