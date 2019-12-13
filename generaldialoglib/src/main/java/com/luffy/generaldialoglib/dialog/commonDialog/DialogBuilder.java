@@ -69,7 +69,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setBgStyle(int resid) {
-        LinearLayout layoutDialogBase = (LinearLayout) mView.findViewById(R.id.layout_dialog_base);
+        LinearLayout layoutDialogBase = mView.findViewById(R.id.layout_dialog_base);
         layoutDialogBase.setBackgroundResource(resid);
         return this;
     }
@@ -84,7 +84,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setMargin(int left, int top, int right, int bottom) {
-        LinearLayout layoutDialogBase = (LinearLayout) mView.findViewById(R.id.layout_dialog_base);
+        LinearLayout layoutDialogBase = mView.findViewById(R.id.layout_dialog_base);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams
                 .WRAP_CONTENT);
@@ -103,7 +103,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTopIcon(Drawable icon) {
-        ImageView view = (ImageView) mView.findViewById(R.id.topIcon);
+        ImageView view = mView.findViewById(R.id.topIcon);
         view.setImageDrawable(icon);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -116,7 +116,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTopIcon(int iconId) {
-        ImageView view = (ImageView) mView.findViewById(R.id.topIcon);
+        ImageView view = mView.findViewById(R.id.topIcon);
         view.setImageResource(iconId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -132,7 +132,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitle(int titleId) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setMovementMethod(new ScrollingMovementMethod());
         view.setText(titleId);
         view.setVisibility(View.VISIBLE);
@@ -146,7 +146,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitle(CharSequence title) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setMovementMethod(new ScrollingMovementMethod());
         view.setText(title);
         view.setVisibility(View.VISIBLE);
@@ -160,7 +160,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitleSize(int titleSize) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, titleSize);
         return this;
     }
@@ -172,7 +172,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitleColor(int titleColor) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setTextColor(ContextCompat.getColor(mContext, titleColor));
         return this;
     }
@@ -184,7 +184,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitleGravity(int gravity) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setGravity(gravity);
         return this;
     }
@@ -196,7 +196,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setTitleLineSpacing(float lineSpacing) {
-        TextView view = (TextView) mView.findViewById(R.id.title);
+        TextView view = mView.findViewById(R.id.title);
         view.setLineSpacing(lineSpacing, 1);
         return this;
     }
@@ -211,7 +211,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContent(int contentId) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setMovementMethod(new ScrollingMovementMethod());
         view.setText(contentId);
         view.setVisibility(View.VISIBLE);
@@ -225,7 +225,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContent(CharSequence content) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setMovementMethod(new ScrollingMovementMethod());
         view.setText(content);
         view.setVisibility(View.VISIBLE);
@@ -239,7 +239,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContentSize(int contentSize) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, contentSize);
         return this;
     }
@@ -251,7 +251,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContentColor(int contentColor) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setTextColor(ContextCompat.getColor(mContext, contentColor));
         return this;
     }
@@ -263,7 +263,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContentGravity(int gravity) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setGravity(gravity);
         return this;
     }
@@ -275,7 +275,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setContentLineSpacing(float lineSpacing) {
-        TextView view = (TextView) mView.findViewById(R.id.content);
+        TextView view = mView.findViewById(R.id.content);
         view.setLineSpacing(lineSpacing, 1);
         return this;
     }
@@ -290,7 +290,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setIcon(int iconId) {
-        ImageView view = (ImageView) mView.findViewById(R.id.icon);
+        ImageView view = mView.findViewById(R.id.icon);
         view.setImageResource(iconId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -303,7 +303,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setIcon(Drawable icon) {
-        ImageView view = (ImageView) mView.findViewById(R.id.icon);
+        ImageView view = mView.findViewById(R.id.icon);
         view.setImageDrawable(icon);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -321,7 +321,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setRecyclerView(List<DialogSelectBean> data, ItemNum itemNum, final SingleSelectListener singleSelectListener) {
-        RecyclerView view = (RecyclerView) mView.findViewById(R.id.recyclerView);
+        RecyclerView view = mView.findViewById(R.id.recyclerView);
         view.setVisibility(View.VISIBLE);
         /*初始化-适配器*/
         DialogBuilderAdapter adapter = new DialogBuilderAdapter(data);
@@ -374,7 +374,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxParentBG(int bgId) {
-        RelativeLayout view = (RelativeLayout) mView.findViewById(R.id.edit_box_parent);
+        RelativeLayout view = mView.findViewById(R.id.edit_box_parent);
         view.setBackgroundResource(bgId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -387,7 +387,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxParentBG(Drawable drawable) {
-        RelativeLayout view = (RelativeLayout) mView.findViewById(R.id.edit_box_parent);
+        RelativeLayout view = mView.findViewById(R.id.edit_box_parent);
         view.setBackgroundDrawable(drawable);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -401,7 +401,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      */
 
     public DialogBuilder setEditBoxBg(int bgId) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setBackgroundResource(bgId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -414,7 +414,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxBg(Drawable bg) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -427,7 +427,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxPadding(int padding) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setPadding(padding, padding, padding, padding);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -443,7 +443,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxPadding(int left, int top, int right, int bottom) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setPadding(left, top, right, bottom);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -456,7 +456,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxHint(int hintId) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setHint(hintId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -469,7 +469,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxHint(CharSequence hintId) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setHint(hintId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -482,7 +482,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxHintColor(int hintColor) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setTextColor(ContextCompat.getColor(mContext, hintColor));
         view.setVisibility(View.VISIBLE);
         return this;
@@ -495,7 +495,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxInputLength(int inputLength) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setFilters(new InputFilter[]{new InputFilter.LengthFilter(inputLength)});
         view.setVisibility(View.VISIBLE);
         return this;
@@ -509,7 +509,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxContentInputFilter(InputFilter[] inputFilters) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setFilters(inputFilters);
         return this;
     }
@@ -521,7 +521,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxContentColor(int contentColor) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setTextColor(ContextCompat.getColor(mContext, contentColor));
         view.setVisibility(View.VISIBLE);
         return this;
@@ -534,7 +534,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxContentSize(int contentSize) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, contentSize);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -547,7 +547,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxContentGravity(int gravity) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setGravity(gravity);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -560,7 +560,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxContentParameter(ViewGroup.LayoutParams layoutParams) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setLayoutParams(layoutParams);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -573,7 +573,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditTextChangedListener(TextWatcher watcher) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.addTextChangedListener(watcher);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -586,7 +586,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxInputType(int inputType) {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         view.setInputType(inputType);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -598,7 +598,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public String getEditBoxContent() {
-        EditText view = (EditText) mView.findViewById(R.id.edit_box_content);
+        EditText view = mView.findViewById(R.id.edit_box_content);
         return view.getText().toString();
     }
 
@@ -609,7 +609,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxCountText(int textId) {
-        TextView view = (TextView) mView.findViewById(R.id.text_box_count);
+        TextView view = mView.findViewById(R.id.text_box_count);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -622,7 +622,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxCountText(CharSequence count) {
-        TextView view = (TextView) mView.findViewById(R.id.text_box_count);
+        TextView view = mView.findViewById(R.id.text_box_count);
         view.setText(count);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -635,7 +635,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxCountColor(int colorId) {
-        TextView view = (TextView) mView.findViewById(R.id.text_box_count);
+        TextView view = mView.findViewById(R.id.text_box_count);
         view.setTextColor(ContextCompat.getColor(mContext, colorId));
         view.setVisibility(View.VISIBLE);
         return this;
@@ -648,7 +648,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setEditBoxCountTextSize(int size) {
-        TextView view = (TextView) mView.findViewById(R.id.text_box_count);
+        TextView view = mView.findViewById(R.id.text_box_count);
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
         view.setVisibility(View.VISIBLE);
         return this;
@@ -713,7 +713,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setCommonConfirmButton(int textId, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_common_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.common_sure);
+        TextView view = mView.findViewById(R.id.common_sure);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -741,7 +741,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setCommonConfirmButton(CharSequence text, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_common_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.common_sure);
+        TextView view = mView.findViewById(R.id.common_sure);
         view.setText(text);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -767,7 +767,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setCommonConfirmButtonBG(int bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.common_sure);
+        TextView view = mView.findViewById(R.id.common_sure);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundResource(bg);
         view.setVisibility(View.VISIBLE);
@@ -782,7 +782,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setCommonConfirmButtonBG(Drawable bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.common_sure);
+        TextView view = mView.findViewById(R.id.common_sure);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
@@ -802,7 +802,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setCommonCancelButton(int textId, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_common_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.common_cancel);
+        TextView view = mView.findViewById(R.id.common_cancel);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -830,7 +830,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setCommonCancelButton(CharSequence text, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_common_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.common_cancel);
+        TextView view = mView.findViewById(R.id.common_cancel);
         view.setText(text);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -856,7 +856,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setCommonCancelButtonBG(int bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.common_cancel);
+        TextView view = mView.findViewById(R.id.common_cancel);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundResource(bg);
         view.setVisibility(View.VISIBLE);
@@ -871,7 +871,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setCommonCancelButtonBG(Drawable bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.common_cancel);
+        TextView view = mView.findViewById(R.id.common_cancel);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
@@ -907,7 +907,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setSimpleConfirmButton(int textId, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_simple_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.simple_confirm);
+        TextView view = mView.findViewById(R.id.simple_confirm);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -935,7 +935,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setSimpleConfirmButton(CharSequence text, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_simple_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.simple_confirm);
+        TextView view = mView.findViewById(R.id.simple_confirm);
         view.setText(text);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -961,7 +961,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setSimpleConfirmButtonBG(int bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.simple_confirm);
+        TextView view = mView.findViewById(R.id.simple_confirm);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundResource(bg);
         view.setVisibility(View.VISIBLE);
@@ -976,7 +976,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setSimpleConfirmButtonBG(Drawable bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.simple_confirm);
+        TextView view = mView.findViewById(R.id.simple_confirm);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
@@ -996,7 +996,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setSimpleCancelButton(int textId, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_simple_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.simple_cancel);
+        TextView view = mView.findViewById(R.id.simple_cancel);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -1024,7 +1024,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setSimpleCancelButton(CharSequence text, final DialogInterface.OnClickListener listener) {
         LinearLayout layout = mView.findViewById(R.id.layout_simple_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.simple_cancel);
+        TextView view = mView.findViewById(R.id.simple_cancel);
         view.setText(text);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -1050,7 +1050,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setSimpleCancelButtonBG(int bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.simple_cancel);
+        TextView view = mView.findViewById(R.id.simple_cancel);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundResource(bg);
         view.setVisibility(View.VISIBLE);
@@ -1065,7 +1065,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setSimpleCancelButtonBG(Drawable bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.simple_cancel);
+        TextView view = mView.findViewById(R.id.simple_cancel);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
@@ -1085,7 +1085,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setExtendButton(int textId, final DialogInterface.OnClickListener listener) {
         RelativeLayout layout = mView.findViewById(R.id.layout_extend_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.extend);
+        TextView view = mView.findViewById(R.id.extend);
         view.setText(textId);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -1113,7 +1113,7 @@ public class DialogBuilder extends BaseDialogBuilder {
     public DialogBuilder setExtendButton(CharSequence text, final DialogInterface.OnClickListener listener) {
         RelativeLayout layout = mView.findViewById(R.id.layout_extend_btn);
         layout.setVisibility(View.VISIBLE);
-        TextView view = (TextView) mView.findViewById(R.id.extend);
+        TextView view = mView.findViewById(R.id.extend);
         view.setText(text);
         view.setVisibility(View.VISIBLE);
         view.setOnClickListener(new View.OnClickListener() {
@@ -1139,7 +1139,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setExtendButtonBG(int bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.extend);
+        TextView view = mView.findViewById(R.id.extend);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundResource(bg);
         view.setVisibility(View.VISIBLE);
@@ -1154,7 +1154,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setExtendButtonBG(Drawable bg, int textColor) {
-        TextView view = (TextView) mView.findViewById(R.id.extend);
+        TextView view = mView.findViewById(R.id.extend);
         view.setTextColor(ContextCompat.getColor(mContext, textColor));
         view.setBackgroundDrawable(bg);
         view.setVisibility(View.VISIBLE);
@@ -1168,7 +1168,7 @@ public class DialogBuilder extends BaseDialogBuilder {
      * @return
      */
     public DialogBuilder setExtendButtonLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        TextView view = (TextView) mView.findViewById(R.id.extend);
+        TextView view = mView.findViewById(R.id.extend);
         view.setLayoutParams(layoutParams);
         return this;
     }

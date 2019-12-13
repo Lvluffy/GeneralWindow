@@ -1,9 +1,11 @@
 package com.luffy.generaldialoglib.popupWindow.callback;
 
 /**
- * Created by lvlufei on 2019/3/13.
+ * Created by lvlufei on 2019/12/13
+ *
+ * @name
+ * @desc
  */
-
 public interface PopStyleOneExpand {
     /**
      * 设置-文本字体大小

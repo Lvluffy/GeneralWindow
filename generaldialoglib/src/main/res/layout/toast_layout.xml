@@ -25,6 +25,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/x10"
             android:visibility="gone"
+            tools:ignore="ContentDescription"
             tools:src="@drawable/dialog_select_yes" />
 
         <TextView

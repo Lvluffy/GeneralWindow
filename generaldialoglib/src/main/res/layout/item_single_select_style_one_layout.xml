@@ -18,8 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/img_selected"
+            android:layout_toStartOf="@+id/img_selected"
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/dialog_color_6299FF"
@@ -31,12 +33,15 @@
             android:id="@+id/img_selected"
             android:layout_width="@dimen/x16"
             android:layout_height="@dimen/y16"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x15"
+            android:layout_marginStart="@dimen/x15"
             android:scaleType="fitXY"
             android:src="@drawable/icon_selected"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="ContentDescription" />
 
     </RelativeLayout>
 

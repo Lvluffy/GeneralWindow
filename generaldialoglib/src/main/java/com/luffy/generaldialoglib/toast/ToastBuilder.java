@@ -71,7 +71,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setTitle(String title) {
-        TextView textView = (TextView) mView.findViewById(R.id.txt_toast_title);
+        TextView textView = mView.findViewById(R.id.txt_toast_title);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
         return this;
@@ -84,7 +84,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setTitle(int title) {
-        TextView textView = (TextView) mView.findViewById(R.id.txt_toast_title);
+        TextView textView = mView.findViewById(R.id.txt_toast_title);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
         return this;
@@ -97,7 +97,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(Bitmap bitmap) {
-        ImageView imageView = (ImageView) mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
         imageView.setImageBitmap(bitmap);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -110,7 +110,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(int resourceID) {
-        ImageView imageView = (ImageView) mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
         imageView.setImageResource(resourceID);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -123,7 +123,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(Drawable drawable) {
-        ImageView imageView = (ImageView) mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
         imageView.setImageDrawable(drawable);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -136,7 +136,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setBackgroundResource(int resource) {
-        LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.layout_toast);
+        LinearLayout linearLayout = mView.findViewById(R.id.layout_toast);
         linearLayout.setBackgroundResource(resource);
         linearLayout.setVisibility(View.VISIBLE);
         return this;
@@ -150,7 +150,7 @@ public class ToastBuilder {
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public ToastBuilder setBackground(Drawable background) {
-        LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.layout_toast);
+        LinearLayout linearLayout = mView.findViewById(R.id.layout_toast);
         linearLayout.setBackground(background);
         linearLayout.setVisibility(View.VISIBLE);
         return this;
@@ -164,7 +164,7 @@ public class ToastBuilder {
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public ToastBuilder setBackgroundColor(int color) {
-        LinearLayout linearLayout = (LinearLayout) mView.findViewById(R.id.layout_toast);
+        LinearLayout linearLayout = mView.findViewById(R.id.layout_toast);
         linearLayout.setBackgroundColor(color);
         linearLayout.setVisibility(View.VISIBLE);
         return this;
