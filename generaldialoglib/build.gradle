@@ -46,5 +46,5 @@ dependencies {
     compileOnly rootProject.ext.supportDepends["support-v4"]
     compileOnly rootProject.ext.supportDepends["recyclerview-v7"]
     /**BaseRecyclerViewAdapter(通用适配器)*/
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
 }
