@@ -30,8 +30,8 @@ ext {
             minSdkVersion    : 15,
             targetSdkVersion : 28,
             applicationId    : "com.luffy.generaldialog",
-            versionCode      : 108,
-            versionName      : "1.0.8"
+            versionCode      : 109,
+            versionName      : "1.0.9"
     ]
 
     dependVersion = [
