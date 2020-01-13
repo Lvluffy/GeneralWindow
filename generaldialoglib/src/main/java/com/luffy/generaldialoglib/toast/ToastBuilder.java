@@ -30,24 +30,24 @@ import java.lang.reflect.Proxy;
  */
 public class ToastBuilder {
     /*长时间*/
-    public static final int LENGTH_LONG = 3500;
+    private static final int LENGTH_LONG = 3500;
     /*短时间*/
-    public static final int LENGTH_SHORT = 2000;
+    private static final int LENGTH_SHORT = 2000;
 
     /*上下文对象*/
-    Context mContext;
+    private final Context mContext;
     /*Toast对象*/
-    Toast mToast;
+    private Toast mToast;
     /*布局View*/
-    View mView;
+    private View mView;
 
     /*显示时间~默认短时间*/
-    public int showTime = LENGTH_SHORT;
+    private int showTime = LENGTH_SHORT;
     /*位置比重~默认底部*/
-    public int gravity = Gravity.CENTER;
+    private int gravity = Gravity.CENTER;
 
-    private Handler mHandler = new Handler();
-    private Runnable r = new Runnable() {
+    private final Handler mHandler = new Handler();
+    private final Runnable r = new Runnable() {
         public void run() {
             mToast.cancel();
         }

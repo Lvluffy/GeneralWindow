@@ -23,82 +23,31 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
         switch (itemNum) {
-            case ItemTwo:
-                itemTwo(outRect, view, parent);
-                break;
             case ItemThree:
-                itemThree(outRect, view, parent);
+                item(outRect, view, parent, 3);
                 break;
             case ItemFour:
-                itemFour(outRect, view, parent);
+                item(outRect, view, parent, 4);
                 break;
             case ItemFive:
-                itemFive(outRect, view, parent);
+                item(outRect, view, parent, 5);
                 break;
             default:
-                itemTwo(outRect, view, parent);
+                item(outRect, view, parent, 2);
                 break;
         }
     }
 
-    private void itemTwo(Rect outRect, View view, RecyclerView parent) {
-        if (parent.getChildLayoutPosition(view) % 2 == 0) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 2 == 1) {
-            outRect.left = space;
-            outRect.right = space;
-            outRect.bottom = space;
+    private void item(Rect outRect, View view, RecyclerView parent, int itemNum) {
+        if (itemNum <= 0) {
+            return;
         }
-    }
-
-    private void itemThree(Rect outRect, View view, RecyclerView parent) {
-        if (parent.getChildLayoutPosition(view) % 3 == 0) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 3 == 1) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 3 == 2) {
+        if (parent.getChildLayoutPosition(view) % itemNum == itemNum - 1) {
             outRect.left = space;
             outRect.right = space;
             outRect.bottom = space;
-        }
-    }
-
-    private void itemFour(Rect outRect, View view, RecyclerView parent) {
-        if (parent.getChildLayoutPosition(view) % 4 == 0) {
+        } else {
             outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 4 == 1) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 4 == 2) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 4 == 3) {
-            outRect.left = space;
-            outRect.right = space;
-            outRect.bottom = space;
-        }
-    }
-
-    private void itemFive(Rect outRect, View view, RecyclerView parent) {
-        if (parent.getChildLayoutPosition(view) % 5 == 0) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 5 == 1) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 5 == 2) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 5 == 3) {
-            outRect.left = space;
-            outRect.bottom = space;
-        } else if (parent.getChildLayoutPosition(view) % 5 == 4) {
-            outRect.left = space;
-            outRect.right = space;
             outRect.bottom = space;
         }
     }

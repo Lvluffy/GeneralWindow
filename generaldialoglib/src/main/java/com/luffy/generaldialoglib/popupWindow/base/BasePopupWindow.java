@@ -41,7 +41,7 @@ public abstract class BasePopupWindow extends PopupWindow implements View.OnClic
      *
      * @param context
      */
-    protected void init(Context context) {
+    private void init(Context context) {
         this.mContext = context;
         if (addLayout() == 0) {
             return;

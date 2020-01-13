@@ -18,11 +18,7 @@ public class OSUtils {
     }
 
     private static class OSUtilsHelper {
-        private static OSUtils mOSUtils;
-
-        static {
-            mOSUtils = new OSUtils();
-        }
+        private static final OSUtils mOSUtils = new OSUtils();
     }
 
     /**

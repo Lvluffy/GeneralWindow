@@ -19,11 +19,7 @@ public class IconColourUtils {
     }
 
     private static class IconColourUtilsHelper {
-        private static IconColourUtils mIconColourUtils;
-
-        static {
-            mIconColourUtils = new IconColourUtils();
-        }
+        private static final IconColourUtils mIconColourUtils = new IconColourUtils();
     }
 
     /**

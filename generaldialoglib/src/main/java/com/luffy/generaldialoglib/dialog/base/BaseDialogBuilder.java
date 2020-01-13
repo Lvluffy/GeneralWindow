@@ -20,9 +20,9 @@ import com.luffy.generaldialoglib.R;
  */
 public abstract class BaseDialogBuilder implements IBaseDialog {
 
-    public BaseAlertDialog mDialog;
-    public Context mContext;
-    public View mView;
+    public final BaseAlertDialog mDialog;
+    public final Context mContext;
+    public final View mView;
 
     /*点击是否自动消失*/
     private boolean autoDismiss = true;
@@ -73,7 +73,7 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
 
         private boolean isFullScreen = false;
 
-        public boolean isFullScreen() {
+        boolean isFullScreen() {
             return isFullScreen;
         }
 
@@ -81,11 +81,11 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
             isFullScreen = fullScreen;
         }
 
-        protected BaseAlertDialog(Context context) {
+        private BaseAlertDialog(Context context) {
             super(context);
         }
 
-        protected BaseAlertDialog(Context context, int style) {
+        private BaseAlertDialog(Context context, int style) {
             super(context, style);
         }
 
