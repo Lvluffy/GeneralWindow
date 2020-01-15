@@ -58,8 +58,6 @@ public abstract class BasePopupWindow extends PopupWindow implements View.OnClic
         this.setOutsideTouchable(false);
         /*监听系统返回键*/
         this.setFocusable(true);
-        this.mView.setFocusable(true);
-        this.mView.setFocusableInTouchMode(true);
         this.mView.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
