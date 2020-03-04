@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/x8"
         android:paddingBottom="@dimen/x8"
-        android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_true_cancel_selector"
+        android:background="@drawable/popup_drawable_normal_radius_ture_stroke_true_cancel_selector"
         android:ellipsize="end"
         android:gravity="center"
         android:lines="1"

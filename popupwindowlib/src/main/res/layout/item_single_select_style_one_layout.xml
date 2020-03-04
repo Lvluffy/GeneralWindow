@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/dialog_drawable_normal_radius_false_stroke_false_cancel_selector"
+        android:background="@drawable/popup_drawable_normal_radius_false_stroke_false_cancel_selector"
         android:padding="15dp">
 
         <!--名称-->
