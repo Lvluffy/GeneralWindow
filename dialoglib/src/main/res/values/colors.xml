@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--generalColor（通用颜色值）-->
+    <color name="dialog_transparent">#00000000</color>
+    <color name="dialog_white">#FFFFFF</color>
+    <color name="dialog_black">#000000</color>
+    <!--commonColor（常见颜色值）-->
+    <color name="dialog_color_333333">#333333</color>
+    <color name="dialog_color_5096F5">#5096F5</color>
+    <color name="dialog_color_50BDF5">#50BDF5</color>
+    <color name="dialog_color_5E98EE">#5E98EE</color>
+    <color name="dialog_color_A0A0A0">#A0A0A0</color>
+    <color name="dialog_color_BBBBBB">#BBBBBB</color>
+    <color name="dialog_color_E0E0E0">#E0E0E0</color>
+    <color name="dialog_color_F9F9F9">#F9F9F9</color>
+    <!--divider-->
+    <color name="dialog_divider">#E0E0E0</color>
+</resources>

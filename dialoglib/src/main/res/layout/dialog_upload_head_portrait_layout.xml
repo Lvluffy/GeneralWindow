@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--公共图片上传弹框-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_false_cancel_selector"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_camera"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_false_cancel_selector"
+            android:gravity="center"
+            android:text="@string/dialog_camera"
+            android:textColor="@color/dialog_color_5096F5"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/dialog_divider" />
+
+        <TextView
+            android:id="@+id/txt_photo_album"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_false_cancel_selector"
+            android:gravity="center"
+            android:text="@string/dialog_photo_album"
+            android:textColor="@color/dialog_color_5096F5"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_false_cancel_selector"
+        android:gravity="center"
+        android:text="@string/dialog_cancel"
+        android:textColor="@color/dialog_color_5096F5"
+        android:textSize="18sp" />
+
+</LinearLayout>

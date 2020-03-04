@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pop_color_6299FF">#6299FF</color>
+    <color name="pop_color_3D464D">#3D464D</color>
+    <!--PopupWindow背景-->
+    <color name="popupwindow_background">#40404040</color>
+    <!--divider-->
+    <color name="pop_divider">#E0E0E0</color>
+</resources>

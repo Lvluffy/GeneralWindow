@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.luffy.generaldialoglib.callback.SingleSelectListener;
-import com.luffy.generaldialoglib.dialog.commonDialog.DialogBuilder;
-import com.luffy.generaldialoglib.dialog.loadingDialog.LoadingDialog;
-import com.luffy.generaldialoglib.dialog.uploadHeadPortraitDilog.UploadHeadPortraitDilog;
-import com.luffy.generaldialoglib.model.popupWindow.SingleSelectBean;
-import com.luffy.generaldialoglib.popupWindow.listPopupWindow.singleSelect.item.ItemNum;
-import com.luffy.generaldialoglib.popupWindow.listPopupWindow.singleSelect.styleOne.SingleSelectStyleOnePopupWindow;
-import com.luffy.generaldialoglib.popupWindow.listPopupWindow.singleSelect.styleTwo.SingleSelectStyleTwoPopupWindow;
-import com.luffy.generaldialoglib.toast.ToastBuilder;
+import com.luffy.dialoglib.dialog.commonDialog.DialogBuilder;
+import com.luffy.dialoglib.dialog.loadingDialog.LoadingDialog;
+import com.luffy.dialoglib.dialog.uploadHeadPortraitDilog.UploadHeadPortraitDilog;
+import com.luffy.popupwindowlib.model.PopSingleSelectBean;
+import com.luffy.popupwindowlib.popupWindow.listPopupWindow.singleSelect.callback.PopSingleSelectListener;
+import com.luffy.popupwindowlib.popupWindow.listPopupWindow.singleSelect.item.PopItemNum;
+import com.luffy.popupwindowlib.popupWindow.listPopupWindow.singleSelect.styleOne.SingleSelectStyleOnePopupWindow;
+import com.luffy.popupwindowlib.popupWindow.listPopupWindow.singleSelect.styleTwo.SingleSelectStyleTwoPopupWindow;
+import com.luffy.toastlib.ToastBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     SingleSelectStyleOnePopupWindow singleSelectStyleOnePopupWindow;
     SingleSelectStyleTwoPopupWindow singleSelectStyleTwoPopupWindow;
     String[] strings = new String[]{"足球", "排球", "篮球", "羽毛球", "乒乓球", "手球", "高尔夫球", "赛跑"};
-    List<SingleSelectBean> singleSelectBeanList = new ArrayList<>();
+    List<PopSingleSelectBean> popSingleSelectBeanList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
         for (int i = 0; i < strings.length; i++) {
-            SingleSelectBean singleSelectBean = new SingleSelectBean();
-            singleSelectBean.setName(strings[i]);
+            PopSingleSelectBean popSingleSelectBean = new PopSingleSelectBean();
+            popSingleSelectBean.setName(strings[i]);
             if (i == 0) {
-                singleSelectBean.setSelected(true);
+                popSingleSelectBean.setSelected(true);
             } else {
-                singleSelectBean.setSelected(false);
+                popSingleSelectBean.setSelected(false);
             }
-            singleSelectBeanList.add(singleSelectBean);
+            popSingleSelectBeanList.add(popSingleSelectBean);
         }
     }
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_toast:
-                new ToastBuilder(MainActivity.this).setTitle("MainActivity").setPicture(R.drawable.dialog_select_yes).show();
+                new ToastBuilder(MainActivity.this).setTitle("MainActivity").setPicture(R.drawable.toast_test_icon).show();
                 break;
             case R.id.tv_dialog:
                 new DialogBuilder(MainActivity.this)
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         .setContentGravity(Gravity.CENTER)
                         .setContentLineSpacing(getResources().getDimension(R.dimen.y5))
                         .setDivider(true)
-                        .setSimpleCancelButtonBG(R.drawable.dialog_drawable_normal_btn_left_selector, R.color.dialog_color_666666)
+                        .setSimpleCancelButtonBG(R.drawable.dialog_drawable_normal_btn_left_selector, R.color.color_666666)
                         .setSimpleCancelButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -118,56 +118,56 @@ public class MainActivity extends AppCompatActivity {
                     singleSelectStyleOnePopupWindow = new SingleSelectStyleOnePopupWindow(MainActivity.this);
                     singleSelectStyleOnePopupWindow.setRecyclerViewHeight(500);
                     singleSelectStyleOnePopupWindow.setTxtSize(16);
-                    singleSelectStyleOnePopupWindow.setTxtDefaultColor(R.color.dialog_color_3D464D);
-                    singleSelectStyleOnePopupWindow.setTxtSelectedColor(R.color.dialog_red);
-                    singleSelectStyleOnePopupWindow.setSelectedIconColor(R.color.dialog_red);
+                    singleSelectStyleOnePopupWindow.setTxtDefaultColor(R.color.color_3D464D);
+                    singleSelectStyleOnePopupWindow.setTxtSelectedColor(R.color.color_FF0000);
+                    singleSelectStyleOnePopupWindow.setSelectedIconColor(R.color.color_FF0000);
                     singleSelectStyleOnePopupWindow.setDividerMargin(dp2px(this, 15), 0, 0, 0);
-                    singleSelectStyleOnePopupWindow.setSingleSelectListener(new SingleSelectListener() {
+                    singleSelectStyleOnePopupWindow.setPopSingleSelectListener(new PopSingleSelectListener() {
                         @Override
                         public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                            for (int i = 0; i < singleSelectBeanList.size(); i++) {
+                            for (int i = 0; i < popSingleSelectBeanList.size(); i++) {
                                 if (i == position) {
-                                    singleSelectBeanList.get(i).setSelected(true);
+                                    popSingleSelectBeanList.get(i).setSelected(true);
                                 } else {
-                                    singleSelectBeanList.get(i).setSelected(false);
+                                    popSingleSelectBeanList.get(i).setSelected(false);
                                 }
                             }
-                            new ToastBuilder(MainActivity.this).setTitle(singleSelectBeanList.get(position).getName()).show();
+                            new ToastBuilder(MainActivity.this).setTitle(popSingleSelectBeanList.get(position).getName()).show();
                         }
                     });
                 }
                 if (singleSelectStyleOnePopupWindow.isShowing()) {
                     singleSelectStyleOnePopupWindow.dismiss();
                 } else {
-                    singleSelectStyleOnePopupWindow.setData(singleSelectBeanList);
+                    singleSelectStyleOnePopupWindow.setData(popSingleSelectBeanList);
                     singleSelectStyleOnePopupWindow.showAsDropDown(tvToast);
                 }
                 break;
             case R.id.tv_popupWindowCheckListTwo:
                 if (singleSelectStyleTwoPopupWindow == null) {
-                    singleSelectStyleTwoPopupWindow = new SingleSelectStyleTwoPopupWindow(MainActivity.this, ItemNum.ItemThree);
+                    singleSelectStyleTwoPopupWindow = new SingleSelectStyleTwoPopupWindow(MainActivity.this, PopItemNum.ItemThree);
                     singleSelectStyleTwoPopupWindow.setTxtSize(16);
-                    singleSelectStyleTwoPopupWindow.setTxtDefaultColor(R.color.dialog_color_3D464D);
-                    singleSelectStyleTwoPopupWindow.setTxtSelectedColor(R.color.dialog_red);
+                    singleSelectStyleTwoPopupWindow.setTxtDefaultColor(R.color.pop_color_3D464D);
+                    singleSelectStyleTwoPopupWindow.setTxtSelectedColor(R.color.color_FF0000);
                     singleSelectStyleTwoPopupWindow.setSelectedBg(R.drawable.popup_drawable_normal_radius_ture_stroke_true_select_true_red_selector);
-                    singleSelectStyleTwoPopupWindow.setSingleSelectListener(new SingleSelectListener() {
+                    singleSelectStyleTwoPopupWindow.setPopSingleSelectListener(new PopSingleSelectListener() {
                         @Override
                         public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                            for (int i = 0; i < singleSelectBeanList.size(); i++) {
+                            for (int i = 0; i < popSingleSelectBeanList.size(); i++) {
                                 if (i == position) {
-                                    singleSelectBeanList.get(i).setSelected(true);
+                                    popSingleSelectBeanList.get(i).setSelected(true);
                                 } else {
-                                    singleSelectBeanList.get(i).setSelected(false);
+                                    popSingleSelectBeanList.get(i).setSelected(false);
                                 }
                             }
-                            new ToastBuilder(MainActivity.this).setTitle(singleSelectBeanList.get(position).getName()).show();
+                            new ToastBuilder(MainActivity.this).setTitle(popSingleSelectBeanList.get(position).getName()).show();
                         }
                     });
                 }
                 if (singleSelectStyleTwoPopupWindow.isShowing()) {
                     singleSelectStyleTwoPopupWindow.dismiss();
                 } else {
-                    singleSelectStyleTwoPopupWindow.setData(singleSelectBeanList);
+                    singleSelectStyleTwoPopupWindow.setData(popSingleSelectBeanList);
                     singleSelectStyleTwoPopupWindow.showAsDropDown(tvToast);
                 }
                 break;

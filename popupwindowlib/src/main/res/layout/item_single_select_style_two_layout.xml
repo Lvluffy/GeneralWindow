@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--单选列表样式二-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--名称-->
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/x8"
+        android:paddingBottom="@dimen/x8"
+        android:background="@drawable/dialog_drawable_normal_radius_ture_stroke_true_cancel_selector"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:textColor="@color/pop_color_6299FF"
+        android:textSize="14sp"
+        tools:text="全部" />
+
+</LinearLayout>

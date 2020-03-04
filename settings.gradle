@@ -1,1 +1,1 @@
-include ':app', ':generaldialoglib'
+include ':app', ':dialoglib', ':toastlib', ':popupwindowlib'

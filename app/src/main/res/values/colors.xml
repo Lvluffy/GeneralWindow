@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--commonColor（常见颜色值）-->
+    <color name="color_FF0000">#FF0000</color>
+    <color name="color_3D464D">#3D464D</color>
+    <color name="color_666666">#666666</color>
 </resources>
