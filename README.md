@@ -14,14 +14,24 @@ allprojects {
 
 二、Module下的build.gradle文件下添加
 
+1.1.0以前
+
 dependencies {
-          compile 'com.github.Lvluffy:GeneralDialog:1.0.0'
+          
+    implementation 'com.github.Lvluffy:GeneralDialog:1.1.0'
+          
 }
 
-或者
+1.1.1以后
 
 dependencies {
-          implementation 'com.github.Lvluffy:GeneralDialog:1.0.0'
+          
+    implementation 'com.github.Lvluffy.GeneralDialog:toastlib:1.1.1'
+    
+    implementation 'com.github.Lvluffy.GeneralDialog:dialoglib:1.1.1'
+    
+    implementation 'com.github.Lvluffy.GeneralDialog:popupwindowlib:1.1.1'
+          
 }
 
 ## 录屏
