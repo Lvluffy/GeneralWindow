@@ -6,11 +6,16 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+
+import com.luffy.popupwindowlib.utils.DeviceBrandUtils;
+
+import static com.luffy.popupwindowlib.utils.DeviceBrandUtils.OSType.Huawei;
 
 /**
  * Created by lvlufei on 2017/1/1
@@ -78,13 +83,16 @@ public abstract class BasePopupWindow extends PopupWindow implements View.OnClic
     @Override
     public void showAsDropDown(View anchor) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Rect rect = new Rect();
-            anchor.getWindowVisibleDisplayFrame(rect);
-            Activity activity = (Activity) anchor.getContext();
-            Rect rectWindow = new Rect();
-            activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(rectWindow);
-            int height = rectWindow.height() - rect.bottom;
-            setHeight(height);
+            if (DeviceBrandUtils.getInstance().getOSType() == Huawei) {
+                int[] a = new int[2];
+                anchor.getLocationInWindow(a);
+                showAtLocation(((Activity) mContext).getWindow().getDecorView(), Gravity.NO_GRAVITY, 0, a[1] + anchor.getHeight());
+            } else {
+                Rect rect = new Rect();
+                anchor.getGlobalVisibleRect(rect);
+                int h = anchor.getResources().getDisplayMetrics().heightPixels - rect.bottom;
+                setHeight(h);
+            }
         }
         super.showAsDropDown(anchor);
     }
