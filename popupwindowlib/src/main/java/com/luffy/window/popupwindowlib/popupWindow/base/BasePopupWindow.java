@@ -66,10 +66,8 @@ public abstract class BasePopupWindow extends PopupWindow implements View.OnClic
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
                     dismiss();
-                    return false;
-                } else {
-                    return true;
                 }
+                return false;
             }
         });
         /*初始化控件*/

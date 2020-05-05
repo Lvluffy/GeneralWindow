@@ -44,10 +44,8 @@ public abstract class BaseDialogBuilder implements IBaseDialog {
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
                     mDialog.dismiss();
-                    return false;
-                } else {
-                    return true;
                 }
+                return false;
             }
         });
         mView = LayoutInflater.from(mContext).inflate(bindView(), null);
