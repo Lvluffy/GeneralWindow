@@ -1,4 +1,4 @@
-# GeneralDialog
+# GeneralWindow
 通用弹框
 
 ## gradle使用：
