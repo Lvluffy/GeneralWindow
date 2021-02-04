@@ -4,11 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.text.method.ScrollingMovementMethod;
@@ -21,16 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.luffy.dialoglib.R;
 import com.luffy.window.dialoglib.dialog.base.BaseDialogBuilder;
-import com.luffy.window.dialoglib.dialog.base.IDialogSingleSelectListener;
-import com.luffy.window.dialoglib.dialog.recycleView.item.DialogItemDecoration;
-import com.luffy.window.dialoglib.dialog.recycleView.item.DialogItemNum;
-import com.luffy.window.dialoglib.model.DialogSelectBean;
-
-import java.util.List;
 
 
 /**
@@ -305,61 +293,6 @@ public class DialogBuilder extends BaseDialogBuilder {
     }
 
     /*----------内容（end）----------*/
-    /*----------列表（begin）----------*/
-
-    /**
-     * 设置列表
-     *
-     * @param data
-     * @param dialogItemNum
-     * @param IDialogSingleSelectListener
-     * @return
-     */
-    public DialogBuilder setRecyclerView(List<DialogSelectBean> data, DialogItemNum dialogItemNum, final IDialogSingleSelectListener IDialogSingleSelectListener) {
-        RecyclerView view = mView.findViewById(R.id.recyclerView);
-        view.setVisibility(View.VISIBLE);
-        /*初始化-适配器*/
-        DialogBuilderAdapter adapter = new DialogBuilderAdapter(data);
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                if (IDialogSingleSelectListener != null) {
-                    IDialogSingleSelectListener.onItemChildClick(adapter, view, position);
-                }
-            }
-        });
-        /*初始化-RecyclerView*/
-        switch (dialogItemNum) {
-            case ItemOne:
-                view.setLayoutManager(new GridLayoutManager(mContext, 1));
-                break;
-            case ItemTwo:
-                view.setLayoutManager(new GridLayoutManager(mContext, 2));
-                view.addItemDecoration(new DialogItemDecoration(DialogItemNum.ItemTwo, mContext.getResources().getDimensionPixelSize(R.dimen.x10)));
-                break;
-            case ItemThree:
-                view.setLayoutManager(new GridLayoutManager(mContext, 3));
-                view.addItemDecoration(new DialogItemDecoration(DialogItemNum.ItemThree, mContext.getResources().getDimensionPixelSize(R.dimen.x10)));
-                break;
-            case ItemFour:
-                view.setLayoutManager(new GridLayoutManager(mContext, 4));
-                view.addItemDecoration(new DialogItemDecoration(DialogItemNum.ItemFour, mContext.getResources().getDimensionPixelSize(R.dimen.x10)));
-                break;
-            case ItemFive:
-                view.setLayoutManager(new GridLayoutManager(mContext, 5));
-                view.addItemDecoration(new DialogItemDecoration(DialogItemNum.ItemFive, mContext.getResources().getDimensionPixelSize(R.dimen.x10)));
-                break;
-            default:
-                view.setLayoutManager(new GridLayoutManager(mContext, 2));
-                view.addItemDecoration(new DialogItemDecoration(DialogItemNum.ItemTwo, mContext.getResources().getDimensionPixelSize(R.dimen.x10)));
-                break;
-        }
-        view.setItemAnimator(new DefaultItemAnimator());
-        view.setAdapter(adapter);
-        return this;
-    }
-
-    /*----------列表（end）----------*/
     /*----------编辑框（begin）----------*/
 
     /**
@@ -1168,30 +1101,4 @@ public class DialogBuilder extends BaseDialogBuilder {
         return this;
     }
 
-    /**
-     * 适配器
-     */
-    private class DialogBuilderAdapter extends BaseQuickAdapter<DialogSelectBean, BaseViewHolder> {
-
-        public DialogBuilderAdapter(@Nullable List<DialogSelectBean> data) {
-            super(data);
-        }
-
-        @Override
-        protected BaseViewHolder createBaseViewHolder(ViewGroup parent, int layoutResId) {
-            return super.createBaseViewHolder(parent, R.layout.item_dialog_common);
-        }
-
-        @Override
-        protected void convert(BaseViewHolder helper, DialogSelectBean item) {
-            /*名称*/
-            ((TextView) helper.getView(R.id.tv_name)).setText(item.getName());
-            /*是否选中*/
-            if (item.isSelected()) {
-                ((ImageView) helper.getView(R.id.iv_select)).setImageResource(R.drawable.dialog_select_yes);
-            } else {
-                ((ImageView) helper.getView(R.id.iv_select)).setImageResource(R.drawable.dialog_select_no);
-            }
-        }
-    }
 }

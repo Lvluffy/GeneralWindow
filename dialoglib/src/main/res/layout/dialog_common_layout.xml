@@ -76,15 +76,6 @@
                 tools:ignore="ContentDescription"
                 tools:src="@drawable/icon_dialog_loading" />
 
-            <!--列表-->
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:scrollbars="none"
-                android:visibility="gone" />
-
             <!--编辑框-->
             <RelativeLayout
                 android:id="@+id/edit_box_parent"

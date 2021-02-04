@@ -24,9 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:visibility="gone"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/toast_test_icon" />
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/txt_toast_title"
