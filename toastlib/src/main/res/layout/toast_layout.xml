@@ -15,7 +15,7 @@
         android:background="@drawable/toast_bg_radius_ture_selector"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/toast_img"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
+            android:textSize="14sp"
             android:visibility="visible"
             tools:text="标题" />
 
