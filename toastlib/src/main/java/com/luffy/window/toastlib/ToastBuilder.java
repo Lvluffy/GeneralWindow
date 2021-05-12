@@ -45,16 +45,8 @@ public class ToastBuilder {
     /*位置比重~默认底部*/
     private int gravity = Gravity.CENTER;
 
-    private final Handler mHandler = new Handler();
-    private final Runnable r = new Runnable() {
-        public void run() {
-            mToast.cancel();
-        }
-    };
-
     public ToastBuilder(Context mContext) {
         this.mContext = mContext;
-        mHandler.removeCallbacks(r);
         if (mToast == null) {
             mToast = new Toast(this.mContext);
         }
@@ -180,22 +172,6 @@ public class ToastBuilder {
     }
 
     /**
-     * 设置显示时间~长
-     */
-    public ToastBuilder setShowTimeLong() {
-        this.showTime = LENGTH_LONG;
-        return this;
-    }
-
-    /**
-     * 设置显示时间~短
-     */
-    public ToastBuilder setShowTimeShort() {
-        this.showTime = LENGTH_SHORT;
-        return this;
-    }
-
-    /**
      * 设置位置比重
      *
      * @param gravity
@@ -211,12 +187,12 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder show() {
-        mHandler.postDelayed(r, showTime);
         if (gravity == Gravity.BOTTOM) {
             mToast.setGravity(gravity, 0, 200);
         } else {
             mToast.setGravity(gravity, 0, 0);
         }
+        mToast.setDuration(showTime);
         mToast.setView(mView);
         // 判断通知是否打开
         if (NotificationManagerCompat.from(mContext).areNotificationsEnabled()) {
