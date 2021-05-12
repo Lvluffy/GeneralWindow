@@ -26,7 +26,7 @@ public class LoadingDialog extends BaseDialogBuilder {
     @Override
     public void init() {
         //点击屏幕不消失
-        mDialog.setCanceledOnTouchOutside(false);
+        setCanceledOnTouchOutside(false);
     }
 
     @Override

@@ -7,18 +7,4 @@
         <item name="@android:windowExitAnimation">@anim/dialog_slide_push_out</item>
     </style>
 
-    <!-- 按钮样式 -->
-    <style name="dialog_btn_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:textColor">@color/dialog_color_333333</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:background">
-            @drawable/dialog_drawable_normal_radius_false_stroke_false_confirm_selector
-        </item>
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_centerVertical">true</item>
-    </style>
-
 </resources>

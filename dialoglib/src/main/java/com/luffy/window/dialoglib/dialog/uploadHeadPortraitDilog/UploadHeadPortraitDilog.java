@@ -34,9 +34,9 @@ public class UploadHeadPortraitDilog extends BaseDialogBuilder {
     @Override
     public void init() {
         //点击屏幕不消失
-        mDialog.setCanceledOnTouchOutside(false);
+        setCanceledOnTouchOutside(false);
         //点击物理返回键不消失
-        mDialog.setCancelable(false);
+        setCancelable(false);
     }
 
     /**
@@ -50,9 +50,7 @@ public class UploadHeadPortraitDilog extends BaseDialogBuilder {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing()) {
-                    mDialog.dismiss();
-                }
+                dismiss();
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
                 }
@@ -72,9 +70,7 @@ public class UploadHeadPortraitDilog extends BaseDialogBuilder {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing()) {
-                    mDialog.dismiss();
-                }
+                dismiss();
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
                 }
@@ -94,9 +90,7 @@ public class UploadHeadPortraitDilog extends BaseDialogBuilder {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing()) {
-                    mDialog.dismiss();
-                }
+                dismiss();
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
                 }

@@ -40,9 +40,9 @@ public class DialogBuilder extends BaseDialogBuilder {
     @Override
     public void init() {
         //点击屏幕不消失
-        mDialog.setCanceledOnTouchOutside(false);
+        setCanceledOnTouchOutside(false);
         //点击物理返回键不消失
-        mDialog.setCancelable(false);
+        setCancelable(false);
     }
 
     /**
@@ -648,8 +648,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_POSITIVE);
@@ -676,8 +676,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_POSITIVE);
@@ -737,8 +737,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
@@ -765,8 +765,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
@@ -842,8 +842,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isShowing() && isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_POSITIVE);
@@ -870,8 +870,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_POSITIVE);
@@ -931,8 +931,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
@@ -959,8 +959,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
@@ -1020,8 +1020,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
@@ -1048,8 +1048,8 @@ public class DialogBuilder extends BaseDialogBuilder {
 
             @Override
             public void onClick(View v) {
-                if (mDialog.isShowing() && isAutoDismiss()) {
-                    mDialog.dismiss();
+                if (isAutoDismiss()) {
+                    dismiss();
                 }
                 if (listener != null) {
                     listener.onClick(mDialog, Dialog.BUTTON_NEGATIVE);
