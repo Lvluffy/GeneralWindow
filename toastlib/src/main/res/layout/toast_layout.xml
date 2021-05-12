@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><!--公共Toast布局-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_marginLeft="40dp"
-    android:layout_marginRight="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
     android:background="@null"
     android:orientation="vertical">
 
@@ -16,26 +15,26 @@
         android:background="@drawable/toast_bg_radius_ture_selector"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="15dp">
 
         <ImageView
-            android:id="@+id/img_toast_picture"
+            android:id="@+id/toast_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
-            android:id="@+id/txt_toast_title"
+            android:id="@+id/toast_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="28sp"
             android:visibility="visible"
             tools:text="标题" />
 
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

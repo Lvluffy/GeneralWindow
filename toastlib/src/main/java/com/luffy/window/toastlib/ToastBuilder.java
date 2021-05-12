@@ -69,8 +69,8 @@ public class ToastBuilder {
      * @param title
      * @return
      */
-    public ToastBuilder setTitle(String title) {
-        TextView textView = mView.findViewById(R.id.txt_toast_title);
+    public ToastBuilder setTitle(CharSequence title) {
+        TextView textView = mView.findViewById(R.id.toast_title);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
         return this;
@@ -83,7 +83,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setTitle(int title) {
-        TextView textView = mView.findViewById(R.id.txt_toast_title);
+        TextView textView = mView.findViewById(R.id.toast_title);
         textView.setText(title);
         textView.setVisibility(View.VISIBLE);
         return this;
@@ -96,7 +96,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(Bitmap bitmap) {
-        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.toast_img);
         imageView.setImageBitmap(bitmap);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -109,7 +109,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(int resourceID) {
-        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.toast_img);
         imageView.setImageResource(resourceID);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -122,7 +122,7 @@ public class ToastBuilder {
      * @return
      */
     public ToastBuilder setPicture(Drawable drawable) {
-        ImageView imageView = mView.findViewById(R.id.img_toast_picture);
+        ImageView imageView = mView.findViewById(R.id.toast_img);
         imageView.setImageDrawable(drawable);
         imageView.setVisibility(View.VISIBLE);
         return this;
@@ -212,9 +212,7 @@ public class ToastBuilder {
      */
     public ToastBuilder show() {
         mHandler.postDelayed(r, showTime);
-        if (gravity == Gravity.CENTER) {
-            mToast.setGravity(gravity, 0, 0);
-        } else if (gravity == Gravity.BOTTOM) {
+        if (gravity == Gravity.BOTTOM) {
             mToast.setGravity(gravity, 0, 200);
         } else {
             mToast.setGravity(gravity, 0, 0);
